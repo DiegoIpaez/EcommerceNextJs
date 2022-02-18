@@ -1,38 +1,74 @@
-.header{
-    position: relative;
-    box-shadow: 0 -10px 10px 15px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0 -10px 10px 15px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 -10px 10px 15px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+.header {
+  position: relative;
+  box-shadow: 0 -10px 10px 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 -10px 10px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 -10px 10px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.top-bar{
-    height: 72px;
-    background-color: $background-dark;
+.top-bar {
+  height: 72px;
+  background-color: $background-dark;
 
-    .ui.grid{
-        margin: 0;
-        padding: 0;
-        .column{
-            padding: 0;
-        }
+  .ui.grid {
+    margin: 0;
+    padding: 0;
+    .column {
+      padding: 0;
+    }
+  }
+
+  // El operador '&' lo que hace es seguir con la clase padre osea
+  // & = .top-bar y seria en este caso: "&__left == .top-bar__left"
+  &__left {
+    display: flex !important;
+    align-items: center;
+
+    img {
+      height: 40px;
+      transition: all 0.5s;
+
+      &:hover {
+        transform: translateX(-15px);
+      }
+    }
+  }
+
+  &__rigth {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+
+    .ui.icon.input>input{
+        padding-right: 2px !important;
     }
 
-    // El operador '&' lo que hace es seguir con la clase padre osea
-    // & = .top-bar y seria en este caso: "&__left == .top-bar__left"
-    &__left{
-        display: flex !important;
-        align-items: center;
+    .ui.input {
+      align-items: center;
+      margin-right: 25px;
 
-        img{
-            height: 40px;
-            transition: all 0.5s;
+      input {
+        background-color: transparent !important;
+        border: 0px;
+        border-bottom: 2px solid $primary !important;
+        border-radius: 0px;
+        color: $primary !important;
+        padding: 5px 0;
+        width: 220px;
+        font-size: 20px;
+        transition: width 0.7s;
 
-            &:hover{
-                transform: translateX(-15px);
-            }
+        &:focus {
+          width: 250px;
         }
+      }
+
+      i {
+        color: $primary;
+        opacity: 1 !important;
+        font-size: 22px;
+        right: -50px !important;
+      }
     }
+  }
 }
-
-

@@ -13,8 +13,8 @@ export default function TopBar() {
               </a>
             </Link>
           </Grid.Column>
-          <Grid.Column width={8} className="top-bar__left">
-            <h3>Buscador</h3>
+          <Grid.Column width={8} className="top-bar__rigth">
+            <Input id="search-game" icon={{name: "search"}}/>
           </Grid.Column>
         </Grid>
       </Container>
